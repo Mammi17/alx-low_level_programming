@@ -4,7 +4,7 @@
  * Return: an integer
  */
 
-int main (void)
+int main(void)
 {
 	int a, b;
 
