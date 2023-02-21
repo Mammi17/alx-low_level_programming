@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints the first 50 fibonacci, starting with 1 and 2
+ * main -funds and prints the first 98 fibonacci, starting with 1 and 2
  * Return: an integer
  */
 
@@ -11,7 +11,7 @@ int main(void)
 
 	b = 1;
 	c = 2;
-	for (a = 0; a < 50; a++)
+	for (a = 0; a < 98; a++)
 	{
 		if (a == 0)
 			printf("%ld", b);
