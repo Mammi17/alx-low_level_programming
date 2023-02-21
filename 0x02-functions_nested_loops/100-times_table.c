@@ -18,9 +18,7 @@ void print_times_table(int n)
 			{
 				_putchar(',');
 				_putchar(' ');
-				
 				prod = numb * mul;
-				
 				if (prod <= 99)
 					_putchar(' ');
 				if (prod <= 9)
