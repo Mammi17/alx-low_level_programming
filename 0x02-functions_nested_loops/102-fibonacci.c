@@ -4,10 +4,13 @@
  * Return: an integer
  */
 
-int main (void)
+int main(void)
 {
 	int a, b, c;
-	for(a = 0; a < 50; a++)
+
+	b = 1;
+	c = 2;
+	for (a = 0; a < 50; a++)
 	{
 		if (a == 0)
 			printf("%d", b);
