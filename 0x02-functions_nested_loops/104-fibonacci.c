@@ -19,7 +19,7 @@ int main(void)
 			printf("%lu", b);
 		else if (a == 1)
 			printf(", %lu", c);
-		if (e > d || i > 0 || j > 0)
+		else if (e > d || i > 0 || j > 0)
 		{
 			e = b + c;
 			up = e / d;
