@@ -13,9 +13,9 @@ void print_times_table(int n)
 	{
 		for (numb = 0; numb <= n; numb++)
 		{
+			_putchar('0');
 			_putchar(',');
 			_putchar(' ');
-			_putchar('0');
 		}
 
 		for (mul = 1; mul <= n; mul++)
@@ -39,7 +39,7 @@ void print_times_table(int n)
 				_putchar((prod / 10) + '0');
 				_putchar((prod % 10) + '0');
 			}
-			_putchar('\n');
 		}
+		_putchar('\n');
 	}
 }
