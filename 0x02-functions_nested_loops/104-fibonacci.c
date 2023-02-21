@@ -7,20 +7,37 @@
 int main(void)
 {
 	int a;
-	unsigned long int b, c;
+	unsigned long int b, c, d, i = 0, j = 0;
+	unsigned long int up, up1, up2, k;
 
 	b = 1;
 	c = 2;
+	d = 10000000000;
 	for (a = 0; a < 98; a++)
 	{
 		if (a == 0)
 			printf("%lu", b);
 		else if (a == 1)
 			printf(", %lu", c);
+		if (a > d || i > 0 || j > 0)
+		{
+			a = b + c;
+			up = a / d;
+			up1 = a % d;
+			k = i + j;
+			up2 = k + up;
+			i = j;
+			j = up2;
+			b = c;
+			c = up1;
+			printf(", %lu", j, c);
+		}
+
 		else
 		{
-			c += b;
-			b = c - b;
+			up1 = c + b;
+			b = c;
+			c = up1;
 			printf(", %lu", c);
 		}
 	}

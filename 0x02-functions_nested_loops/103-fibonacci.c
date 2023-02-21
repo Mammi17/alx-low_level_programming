@@ -10,15 +10,16 @@ int main(void)
 
 	b = 1;
 	c = 2;
+	s = c;
 	for (a = 0; a < 4000000; a++)
 	{
 		a = b + c;
-		b = c;
-		b = a;
-		if (a % 2 == 0)
+		c += b;
+		if (c % 2 == 0)
 		{
-			s += a;
+			s += c;
 		}
+		b = c - b;
 		printf("%ld", s);
 	}
 	printf("\n");
