@@ -20,7 +20,7 @@ int main(void)
 			s += a;
 		}
 		printf("%ld", s);
-	i}
+	}
 	printf("\n");
 	return (0);
 }
