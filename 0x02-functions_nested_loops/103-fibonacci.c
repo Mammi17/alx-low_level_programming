@@ -9,7 +9,7 @@ int main(void)
 	long int a, b, c, s;
 
 	b = 1;
-	c = 0
+	c = 2;
 	for (a = 0; a < 4000000; a++)
 	{
 		a = b + c;
@@ -20,7 +20,7 @@ int main(void)
 			s += a;
 		}
 		printf("%ld", s);
-	}
+	i}
 	printf("\n");
 	return (0);
 }
