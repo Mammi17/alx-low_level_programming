@@ -7,7 +7,7 @@
 int main(void)
 {
 	int a;
-	long int b, c;
+	unsigned long int b, c;
 
 	b = 1;
 	c = 2;
@@ -16,12 +16,12 @@ int main(void)
 		if (a == 0)
 			printf("%ld", b);
 		else if (a == 1)
-			printf("%ld", c);
+			printf(", %ld", c);
 		else
 		{
 			c += b;
 			b = c - b;
-			printf("%ld", c);
+			printf(", %ld", c);
 		}
 	}
 	printf("\n");

@@ -8,6 +8,8 @@ int main(void)
 {
 	long int a, b, c, s;
 
+	b = 1;
+	c = 0
 	for (a = 0; a < 4000000; a++)
 	{
 		a = b + c;
