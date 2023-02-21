@@ -8,7 +8,7 @@ int main(void)
 {
 	int a;
 	unsigned long int b, c, d, i = 0, j = 0;
-	unsigned long int up, up1, up2, k;
+	unsigned long int up, up1, up2, k, e;
 
 	b = 1;
 	c = 2;
@@ -19,18 +19,18 @@ int main(void)
 			printf("%lu", b);
 		else if (a == 1)
 			printf(", %lu", c);
-		if (a > d || i > 0 || j > 0)
+		if (e > d || i > 0 || j > 0)
 		{
-			a = b + c;
-			up = a / d;
-			up1 = a % d;
+			e = b + c;
+			up = e / d;
+			up1 = e % d;
 			k = i + j;
 			up2 = k + up;
 			i = j;
 			j = up2;
 			b = c;
 			c = up1;
-			printf(", %lu", j, c);
+			printf(", %lu%10lu", j, c);
 		}
 
 		else
