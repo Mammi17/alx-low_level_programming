@@ -19,8 +19,8 @@ int main(void)
 			s += c;
 		}
 		b = c - b;
-		printf("%i", s);
 	}
+	printf("%ld", s);
 	printf("\n");
 	return (0);
 }
