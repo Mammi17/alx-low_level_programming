@@ -14,7 +14,7 @@ int main(void)
 	c = 2;
 	d = 10000000000;
 	e = b + c;
-	printf("%lu, %lu", b, c);
+	printf("%lu, %lu, ", b, c);
 	for (a = 2; a < 98; a++)
 	{
 		if (e > d || i > 0 || j > 0)
