@@ -38,7 +38,7 @@ int main(void)
 		printf(", ");
 		up = i;
 		up1 = j;
-		i = k
+		i = k;
 		j = l;
 	}
 	printf("\n");
