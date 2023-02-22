@@ -13,11 +13,11 @@ int main(void)
 	b = 1;
 	c = 2;
 	d = 10000000000;
-	printf("%lu, %lu", b, c);
+	printf("%lu, %lu, ", b, c);
 	for (a = 2; a < 91; a++)
 	{
 		s = b + c;
-		printf("%lu", s);
+		printf("%lu, ", s);
 		b = c;
 		c = s;
 	}
@@ -32,7 +32,7 @@ int main(void)
 		if ((up1 + j) > 9999999999)
 		{
 			k += 1;
-			l %= 10000000000;
+			l %= d;
 		}
 		printf("%lu%lu", k, l);
 		if (a != 98)
