@@ -21,12 +21,12 @@ int main(void)
 	}
 	up = b / d;
 	up1 = b % d;
-	i = c / l;
-	j = c % l;
+	i = c / d;
+	j = c % d;
 	for (a = 92; a < 99; a++)
 	{
-		printf(", %lu", i + (j / l));
-		printf("%lu", j % l);
+		printf(", %lu", i + (j / d));
+		printf("%lu", j % d);
 		i = i + up;
 		up = i - up;
 		j = j + up1;
