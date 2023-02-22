@@ -30,7 +30,7 @@ int main(void)
 			j = up2;
 			b = c;
 			c = up1;
-			printf(", %lu%lu", j, c);
+			printf(", %lu%0lu", j, c);
 		}
 
 		else
