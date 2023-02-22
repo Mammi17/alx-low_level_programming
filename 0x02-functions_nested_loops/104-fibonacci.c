@@ -10,11 +10,10 @@ int main(void)
 	unsigned long int b, c, d, i, j;
 	unsigned long int up, up1, s, k, l;
 
-	b = 1;
-	c = 2;
+	b = 0;
+	c = 1;
 	d = 10000000000;
-	printf("%lu, %lu, ", b, c);
-	for (a = 2; a < 92; a++)
+	for (a = 0; a < 92; a++)
 	{
 		s = b + c;
 		printf("%lu, ", s);
@@ -34,7 +33,7 @@ int main(void)
 			k += 1;
 			l %= d;
 		}
-		printf("%lu%lu", k, l);
+		printf("%lu%010lu", k, l);
 		if (a != 98)
 		printf(", ");
 		i = k;
