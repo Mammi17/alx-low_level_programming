@@ -13,13 +13,13 @@ int main(void)
 	b = 1;
 	c = 2;
 	d = 10000000000;
+	e = b + c;
 	for (a = 0; a < 98; a++)
 	{
 		if (a == 0)
 			printf("%lu", b);
 		else if (a == 1)
 			printf(", %lu", c);
-		e = b + c;
 		else if (e > d || i > 0 || j > 0)
 		{
 			up = e / d;
