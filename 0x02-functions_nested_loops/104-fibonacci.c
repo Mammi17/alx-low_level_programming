@@ -21,8 +21,8 @@ int main(void)
 		c = s;
 	}
 	up = b / d;
-	up1 = b % d;
 	i = c / d;
+	up1 = b % d;
 	j = c % d;
 	for (a = 93; a < 99; a++)
 	{
@@ -33,13 +33,13 @@ int main(void)
 			k += 1;
 			l %= d;
 		}
-		printf("%lu%010lu", k, l);
+		printf("%lu%lu", k, l);
 		if (a != 98)
 		printf(", ");
-		i = k;
 		up = i;
-		j = l;
 		up1 = j;
+		i = k
+		j = l;
 	}
 	printf("\n");
 	return (0);
