@@ -4,7 +4,7 @@
 /**
  * print_number - prints int with putchar
  * @n: take number, hello
- * Return: void
+ * Return: a void
  */
 
 void print_number(int n)
@@ -14,8 +14,7 @@ void print_number(int n)
 	m = n;
 	if (n < 0)
 	{
-		n *= -1;
-		m = n;
+		m = -n;
 		_putchar('-');
 	}
 	m /= 10;
