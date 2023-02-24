@@ -22,10 +22,10 @@ int main(void)
 		{
 			printf("Buzz");
 		}
-		/*if ((i % 3 == 0) && (i % 5 == 0))
+		if ((i % 3 == 0) && (i % 5 == 0))
 		{
 			printf("FizzBuzz");
-		}*/
+		}
 		if ((i % 3 != 0) && (i % 5 != 0))
 		{
 			printf("%d", i);
