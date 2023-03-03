@@ -9,7 +9,7 @@ char *rot13(char *c)
 {
 	int a, b;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char abcd[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (a = 0; c[a] != '\0'; a++)
 	{
@@ -17,7 +17,7 @@ char *rot13(char *c)
 		{
 			if (c[a] == in[b])
 			{
-				c[a] = out[b];
+				c[a] = abcd[b];
 				break;
 			}
 		}
