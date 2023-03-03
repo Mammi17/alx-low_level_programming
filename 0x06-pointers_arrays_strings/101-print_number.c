@@ -7,7 +7,7 @@
 
 void print_number(int n)
 {
-	int pow, neg, hod;
+	unsigned int pow, neg, hod;
 	
 	neg = 0;
 	pow = 1;
