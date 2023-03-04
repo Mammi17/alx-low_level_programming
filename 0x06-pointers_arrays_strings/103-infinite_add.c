@@ -10,23 +10,46 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int a, b, c;
+	int a, b, c, d, add1 = 0, add1 = 0, e, f;
 
 	b = 0;
 	c = 0;
+	d = 0;
+	f = 0;
+	e = 0;
 	for (a = 0; n1[a]; a++)
 	{
-		b++;
+		b--;
 	}
 	for (a = 0; n2[a]; a++)
 	{
 		c++;
 	}
-	if (size_r <= b + 1 || size_r <= c + 1)
+	if (size_r >= b || size_r >= c)
 		return 0;
-	n1 += b - 1;
-	n2 += c - 1;
-	r[size_r] = '\0';
-	d = add_strings(n1, n2, r, --size_r);
-	return (d);
+	for (b = 0 || c = 0; b >= 0 || c >= 0 || d == 1; b-- || c--)
+	{
+		if (b < 0)
+			add1 = 0;
+		else
+			add1 = n1[b] - '0';
+		if (c < 0)
+			add2 = 0;
+		else
+			add2 = n2[c] - '0';
+		e = add1 + add2 + d;
+		if (e >= 10)
+			d = 1;
+		else
+			d = 0;
+		if (f >= (size_r - 1))
+			return 0;
+		r[f] = (e % 10) + '0';
+		f++
+	}
+	if (f == size_r)
+		return 0;
+	r[f] = '\0';
+	rev_string(r);
+	return (r);
 }
