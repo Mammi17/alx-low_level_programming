@@ -22,7 +22,7 @@ void print_buffer(char *b, int size)
 			if ((c + a) >= size)
 				printf(" ");
 			else
-				printf("%02x", b[a + c]);
+				printf("%02x", *(b + a + c));
 			if ((c % 2) != 0 && index != 0)
 				printf(" ");
 			c++;
@@ -31,8 +31,8 @@ void print_buffer(char *b, int size)
 		{
 			if ((c + a) >= size)
 				break;
-			else if (b[c + a] >= 31 && b[c + a] <= 126)
-				printf("%c", b[a + c]);
+			else if (*(b + c + a) >= 31 && *(b + c + a) <= 126)
+				printf("%c", *(b + a + c));
 			if ((c % 2) != 0 && index != 0)
 			else
 				printf(".");
