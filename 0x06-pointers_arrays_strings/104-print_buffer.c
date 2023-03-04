@@ -8,7 +8,7 @@
  */
 void print_buffer(char *b, int size)
 {
-	int a, c;
+	int a, c = 0;
 
 	if (size <= 0)
 	{
@@ -17,8 +17,7 @@ void print_buffer(char *b, int size)
 	}
 	for (a = 0; a < size; a += 10)
 	{
-		printf("%08x:", a);
-		c = 0;
+		printf("%08x: ", a);
 		while (c < 10)
 		{
 			if ((c + a) >= size)
@@ -29,7 +28,6 @@ void print_buffer(char *b, int size)
 				printf(" ");
 			c++;
 		}
-		c = 0;
 		while (c < 10)
 		{
 			if ((c + a) >= size)
