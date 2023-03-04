@@ -15,7 +15,7 @@ void print_buffer(char *b, int size)
 		printf("\n");
 		return;
 	}
-	for (a = 0; a < size; a++)
+	for (a = 0; a < size; a += 10)
 	{
 		printf("%08x:", a);
 		c = 0;

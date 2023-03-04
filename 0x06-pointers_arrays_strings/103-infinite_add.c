@@ -17,15 +17,15 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	d = 0;
 	f = 0;
 	e = 0;
-	for (a = 0; n1[a]; a++)
+	for (b = 0; n1[b] != '\0'; b++)
 	{
 		b--;
 	}
-	for (a = 0; n2[a]; a++)
+	for (c = 0; n2[c]; c++)
 	{
-		c++;
+		c--;
 	}
-	if (size_r >= b || size_r >= c)
+	if (c >= size_r || b >= size_r)
 		return 0;
 	for (b = 0 || c = 0; b >= 0 || c >= 0 || d == 1; b-- || c--)
 	{
