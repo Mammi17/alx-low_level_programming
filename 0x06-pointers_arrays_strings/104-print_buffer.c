@@ -15,12 +15,12 @@ void print_buffer(char *b, int size)
 		printf("%08x: ", a);
 		for (c = 0; c < 10; c++)
 		{
-			if ((c % 2) != 0 && index != 0)
-				printf(" ");
 			if ((c + a) >= size)
-				printf(" ");
+				printf("  ");
 			else
 				printf("%02x", *(b + a + c));
+			if ((c % 2) != 0 && index != 0)
+				printf(" ");
 		}
 		for (c = 0; c < 10; c++)
 		{
@@ -28,7 +28,6 @@ void print_buffer(char *b, int size)
 				break;
 			else if (*(b + c + a) >= 31 && *(b + c + a) <= 126)
 				printf("%c", *(b + a + c));
-			if ((c % 2) != 0 && index != 0)
 			else
 				printf(".");
 		}
