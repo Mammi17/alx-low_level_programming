@@ -26,7 +26,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		c--;
 	}
 	if (c >= size_r || b >= size_r)
-		return 0;
+		return (0);
 	for (b = 0 || c = 0; b >= 0 || c >= 0 || d == 1; b-- || c--)
 	{
 		if (b < 0)
@@ -43,12 +43,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else
 			d = 0;
 		if (f >= (size_r - 1))
-			return 0;
+			return (0);
 		r[f] = (e % 10) + '0';
 		f++
 	}
 	if (f == size_r)
-		return 0;
+		return (0);
 	r[f] = '\0';
 	rev_string(r);
 	return (r);

@@ -13,7 +13,6 @@ void print_buffer(char *b, int size)
 	if (size <= 0)
 	{
 		printf("\n");
-		return;
 	}
 	for (a = 0; a < size; a += 10)
 	{
@@ -31,7 +30,7 @@ void print_buffer(char *b, int size)
 		while (c < 10)
 		{
 			if ((c + a) >= size)
-				return;
+				break;
 			else if (b[c + a] >= 31 && b[c + a] <= 126)
 				printf("%c", b[a + c]);
 			if ((c % 2) != 0 && index != 0)
