@@ -10,10 +10,6 @@ void print_buffer(char *b, int size)
 {
 	int a, c;
 
-	if (size <= 0)
-	{
-		printf("\n");
-	}
 	for (a = 0; a < size; a += 10)
 	{
 		printf("%08x: ", a);
@@ -38,6 +34,10 @@ void print_buffer(char *b, int size)
 		}
 		if (a >= size)
 			continue;
+		printf("\n");
+	}
+	if (size <= 0)
+	{
 		printf("\n");
 	}
 }
