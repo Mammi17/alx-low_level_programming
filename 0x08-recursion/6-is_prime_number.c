@@ -10,8 +10,8 @@ int is_prime_number(int n)
 {
 	int i;
 
-	i = 1;
-	if (n => i || n <= i)
+	i = 2;
+	if (n < i)
 		return (0);
 	else if (n == i)
 		return (1);
@@ -20,7 +20,7 @@ int is_prime_number(int n)
 	else if (n == 0 || n == 1)
 		return (0);
 	else if (n % i == 0)
-		return (1);
+		return (0);
 	else
 		return (0);
 	return (is_prime_number(n));

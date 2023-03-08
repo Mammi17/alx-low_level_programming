@@ -5,12 +5,12 @@
  * @n: integer
  * Return: integer
  */
-int _evaluate(int h, int n)
+int evalua(int h, int n)
 {
 	if (n == 0 || n == 1)
 		return (n);
 	else if ((h * h) < n)
-		return (_evaluate(h + 1, n));
+		return (evalua(h + 1, n));
 	else if ((h * h) == n)
 		return (h);
 	return (-1);
@@ -32,6 +32,6 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-		return (_evaluate(h, n));
+		return (evalua(h, n));
 	}
 }
