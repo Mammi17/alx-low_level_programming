@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _evaluate - evaluate function sqrt
- * @i: integer
+ * @h: integer
  * @n: integer
  * Return: integer
  */
@@ -13,7 +13,7 @@ int _evaluate(int h, int n)
 		return (_evaluate(h + 1, n));
 	else if ((h * h) == n)
 		return (h);
-	return(-1);
+	return (-1);
 }
 /**
  * _sqrt_recursion - returns the natural square root of a number
@@ -27,10 +27,11 @@ int _sqrt_recursion(int n)
 
 	h = 0;
 	if (h < 0)
+	{
 		return (-1);
+	}
 	else
 	{
 		return (_evaluate(h, n));
 	}
-	return (0);
 }
