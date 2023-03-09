@@ -20,13 +20,10 @@ int is_palindrome(char *s)
  */
 int drome(int h, char *s)
 {
-
-	h = -1;
 	if (h < 1)
 		return (1);
 	else if (*s == *(s + h))
 	{
-		h = h - 2;
 		return (drome(h - 2, s + 1));
 	}
 	return (0);
