@@ -37,7 +37,7 @@ int drome(int h, char *s)
 
 int _strlen_recursion(char *s)
 {
-	if (*s != '\0')
+	if (!*s)
 	{
 		return (0);
 	}
