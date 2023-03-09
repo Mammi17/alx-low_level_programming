@@ -7,11 +7,10 @@
 
 int is_palindrome(char *s)
 {
-	int a, b;
+	int a;
 
 	a = _strlen_recursion(s);
-	b = a - 1;
-	return (drome(b, s));
+	return (drome(a - 1, s));
 }
 /**
  * drome - a recursion
