@@ -9,7 +9,7 @@ int is_palindrome(char *s)
 {
 	int l;
 
-	l = 0;
+	l = 1;
 	if (l < 1)
 		return (1);
 	if (*s == *(s + l))
@@ -20,7 +20,4 @@ int is_palindrome(char *s)
 	return (0);
 	l = l - 1;
 	return (is_palindrome(s));
-}
-
-
-	
+}	
