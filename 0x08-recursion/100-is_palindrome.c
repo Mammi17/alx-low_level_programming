@@ -7,18 +7,28 @@
 
 int is_palindrome(char *s)
 {
-	int l, a;
+	int a, b;
 
-	l = -1;
-	if (l < 1)
+	a = _strlen_recursion(s);
+	b = a - 1;
+	return (drome(s, b));
+}
+/**
+ * drome - a recursion
+ * @h: integer
+ * @s: a pointer
+ * Return: an integer
+ */
+int drome(int h, char *s)
+{
+
+	h = -1;
+	if (h < 1)
 		return (1);
-	if (*s == *(s + l))
+	else if (*s == *(s + h))
 	{
-		l = l - 2;
-		return (is_palindrome(s + 1));
+		h = h - 2;
+		return (drome(s + 1, h - 2));
 	}
 	return (0);
-	a = _strlen_recursion(s);
-	a = a - 1;
-	return (is_palindrome(s));
 }
