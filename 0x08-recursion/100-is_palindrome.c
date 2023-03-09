@@ -9,7 +9,6 @@ int is_palindrome(char *s)
 {
 	int l, a;
 
-	l = 0;
 	if (l < 1)
 		return (1);
 	if (*s == *(s + l))
@@ -21,4 +20,4 @@ int is_palindrome(char *s)
 	a = _strlen_recursion(s);
 	a = a - 1;
 	return (is_palindrome(s));
-}	
+}
