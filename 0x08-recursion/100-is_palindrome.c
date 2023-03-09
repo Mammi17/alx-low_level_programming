@@ -22,7 +22,7 @@ int drome(int h, char *s)
 {
 	if (h < 1)
 		return (1);
-	else if (*s == *(s + h))
+	if (*s == *(s + h))
 	{
 		return (drome(h - 2, s + 1));
 	}
