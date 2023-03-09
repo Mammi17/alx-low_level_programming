@@ -15,13 +15,22 @@ int is_prime_number(int n)
 		return (0);
 	else if (n == i)
 		return (1);
-	else if (i == n - 1)
+	return (numb(n, i));
+}
+/**
+ * numb - a recursion
+ * @n: integer
+ * @i: integer
+ * Return: integer
+ */
+int numb(int n, int i)
+{
+
+	if (i == n - 1)
 		return (1);
-	else if (n == 0 || n == 1)
-		return (1);
-	else if (n % i == 0)
+	if (n % i != 0)
+		return (numb(n, i + 1));
+	if (n % i == 0)
 		return (0);
-	else
-		return (0);
-	return (is_prime_number(n));
+	return (0);
 }

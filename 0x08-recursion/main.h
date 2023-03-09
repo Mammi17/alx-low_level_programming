@@ -10,5 +10,6 @@ int _sqrt_recursion(int n);
 int is_prime_number(int n);
 int _putchar(char c);
 int evalua(int h, int n);
+int  numb(int n, int i);
 int wildcmp(char *s1, char *s2);
 #endif /* MAIN_H */
