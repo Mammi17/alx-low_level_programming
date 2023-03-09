@@ -20,6 +20,7 @@ int is_palindrome(char *s)
 	return (0);
 	if (*s == '\0')
 	{
+		return (1);
 		a = _strlen_recursion(s);
 		a = a - 1;
 		return (is_palindrome(s));
