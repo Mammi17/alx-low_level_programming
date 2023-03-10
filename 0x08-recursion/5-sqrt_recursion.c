@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _evalua - evaluate function sqrt
+ * evalua - evaluate function sqrt
  * @h: integer
  * @n: integer
  * Return: integer
