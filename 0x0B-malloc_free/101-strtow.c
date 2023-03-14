@@ -29,7 +29,7 @@ char **strtow(char *str)
 			if (i)
 			{
 				d = j;
-				string = (char *) malloc ((i + 1) * sizeof(char));
+				string = (char *) malloc((i + 1) * sizeof(char));
 				if (string == NULL)
 					return (NULL);
 				while (t < d)
@@ -66,5 +66,5 @@ int count(char *f)
 			b++;
 		}
 	}
-	return b;
+	return (b);
 }
