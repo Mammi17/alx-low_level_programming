@@ -11,7 +11,7 @@
 char **strtow (char *str)
 { 
 	char **point, *string;
-	int b, i = 0, j = 0, a, d, t;
+	int b, i = 0, j = 0, a, d, t, l = 0;
 
 	if (str[0] == ' ' && str[1] == '\0')
 	       return (NULL);
@@ -35,11 +35,11 @@ char **strtow (char *str)
 			{
 				d = j;
 				string = (char *) malloc ((i + 1) * sizeof(char));
-				if (string == Null)
+				if (string == NULL)
 					return NULL;
 				while (t < d)
-					string[]++ = str[t++];
-				string[] = '\0';
+					*string++ = str[t++];
+				*string = '\0';
 				point[l] = string - i;
 				l++;
 				i = 0;
@@ -63,12 +63,12 @@ int count(char *f)
 
 	for (k = 0; f[k] != '\0'; k++)
 	{
-		if (s[k] == ' ')
+		if (f[k] == ' ')
 			a = 0;
 		if (a == 0)
 		{
 			a = 1;
-			b++
+			b++;
 		}
 	}
 	return b;
