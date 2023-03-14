@@ -5,7 +5,7 @@
 /**
  * strtow - splits a string into words
  * @str: a pointer
- * return: point
+ * Return: pointer
  */
 
 char **strtow (char *str)
@@ -13,11 +13,8 @@ char **strtow (char *str)
 	char **point;
 	int i, j, a;
 
-	/*
-	if (str == "")
+	if (str == " ")
 	       return (NULL);
-
-	 */
 	if (str == NULL)
 		return (NULL);
 	
@@ -32,8 +29,7 @@ char **strtow (char *str)
 	i = 0;
 	j = 0;
 	while (str[j])
-	/*
-	for (j = 0, i = 0; str[j] < a; j++)*/
+	for (j = 0, i = 0; str[j] < a; j++)
 	{
 		if (str[j] == ' ')
 		{
