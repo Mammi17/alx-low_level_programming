@@ -13,7 +13,7 @@ char **strtow (char *str)
 	char **point;
 	int i, j, a;
 
-	if (str == " ")
+	if (str == ' ')
 	       return (NULL);
 	if (str == NULL)
 		return (NULL);
