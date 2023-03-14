@@ -8,25 +8,20 @@
  * Return: pointer
  */
 
-char **strtow (char *str)
-{ 
+char **strtow(char *str)
+{
 	char **point, *string;
 	int b, i = 0, j = 0, a, d, t, l = 0;
 
-	if (str[0] == ' ' && str[1] == '\0')
-	       return (NULL);
-	if (str == NULL || str[0] == '\0')
-		return (NULL);
-	
 	a = 0;
 	while (str[a])
 		a++;
 	b = count(str);
 	if (b == 0)
-		return NULL;
+		return (NULL);
 	point = (char **) malloc((b + 1) * sizeof(char *));
 	if (point == NULL)
-		return NULL;
+		return (NULL);
 	for (j = 0; i <= a; j++)
 	{
 		if (str[j] == ' ' || str[j] == '\0')
@@ -36,7 +31,7 @@ char **strtow (char *str)
 				d = j;
 				string = (char *) malloc ((i + 1) * sizeof(char));
 				if (string == NULL)
-					return NULL;
+					return (NULL);
 				while (t < d)
 					*string++ = str[t++];
 				*string = '\0';
