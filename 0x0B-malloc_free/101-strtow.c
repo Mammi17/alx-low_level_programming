@@ -1,4 +1,4 @@
-#include "main.h"
+49#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,62 +10,66 @@
 
 char **strtow (char *str)
 { 
-	char **point;
-	int i, j, a;
+	char **point, *string;
+	int b, i = 0, j = 0, a, d, t;
 
-	if (str[0] == ' ')
+	if (str[0] == ' ' && str[1] == '\0')
 	       return (NULL);
-	if (str == NULL)
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	
-	a = 1;
-
-	for (j = 1; str[j] != '\0'; j++)
-			a++;
-
-	point = (char **) malloc(a  * sizeof(char));
+	a = 0;
+	while (str[a])
+		a++;
+	b = count(str);
+	if (b == 0)
+		return NULL;
+	point = (char **) malloc((b + 1) * sizeof(char *));
 	if (point == NULL)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (str[j])
-	for (j = 0, i = 0; str[j] < a; j++)
+		return NULL;
+	for (j = 0; i <= a; j++)
 	{
-		if (str[j] == ' ')
+		if (str[j] == ' ' || str[j] == '\0')
 		{
-			j++;
-			i++;
-		}
-		else 
-		{
-			point[i] = (char *) malloc(j * sizeof(char));
-			point[i] = &str[j];
-		}
-		j++;
-	}
-	**point = '\n';
-	return (point);
-	/*
-	for (j = 0; str[j] != '\0'; j++)
-	{
-		if (str[j] == ' ')
-			a++;
-	}
-	point = (char **) malloc(a  * sizeof(char*));
-	if (point == NULL)
-		return (NULL);
-	for (i = 0, l = 0; str[j] != '\0'; l++)
-	{
-		for (i = j; str[i] != '\0'; i++)
-		{
-			if (str[i] != ' ')
+			if (i)
 			{
-				point[l] = (char *) malloc((i-j+2) * sizeof(char));
+				d = j;
+				string = (char *) malloc ((i + 1) * sizeof(char));
+				if (string == Null)
+					return NULL;
+				while (t < d)
+					string[]++ = str[t++];
+				string[] = '\0';
+				point[l] = string - i;
+				l++;
+				i = 0;
 			}
-			strncpy (point[l],str[j],i-j);
 		}
-		j = i + 1;
+		if (i++ == 0)
+			t = j;
 	}
+	point[l] = NULL;
 	return (point);
-	*/
+}
+/**
+ * count - a function
+ * @f: a pointer
+ * Return: an integer
+ */
+
+int count(char *f)
+{
+	int a = 0, b = 0, k;
+
+	for (k = 0; f[k] != '\0'; k++)
+	{
+		if (s[k] == ' ')
+			a = 0;
+		if (a == 0)
+		{
+			a = 1;
+			b++
+		}
+	}
+	return b;
 }
