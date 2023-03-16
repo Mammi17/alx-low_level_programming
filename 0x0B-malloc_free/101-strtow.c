@@ -40,9 +40,10 @@ char **strtow(char *str)
 				i = 0;
 			}
 		}
-		if (i++ == 0)
+		else if (i++ == 0)
 			t = j;
 	}
+
 	point[l] = NULL;
 	return (point);
 }
