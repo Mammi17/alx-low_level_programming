@@ -11,7 +11,7 @@
 int main(int argc, char **argv)
 {
 	int j, l;
-	unsigned long int mul, num1, num2;
+	unsigned long mul, num1, num2;
 
 	if (argc != 3)
 	{
