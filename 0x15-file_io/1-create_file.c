@@ -21,14 +21,13 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content)
 	{
+		c = 0;
 		while (text_content[c])
 			c++;
-		b = write(a, text_content, c);
-		if (b != c)
-			return (-1);
 	}
-
+	b = write(a, text_content, c);
+	if (b != c)
+		return (-1);
 	close(a);
-
 	return (1);
 }
