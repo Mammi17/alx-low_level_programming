@@ -2,9 +2,9 @@
 #include <stdio.h>
 /**
 * read_textfile - check the code for Holberton School students.
-* @filename: file to read and write
+* @filename: a character
 * @letters: number of letters to read and write.
-* Return: letters printed
+* Return: void
 */
 
 ssize_t read_textfile(const char *filename, size_t letters)
