@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
 * control- verify the file to check if is a ELF
-* @e_ident: the ELF struct
+* @id: the ELF struct
 * Return: void
 */
 
