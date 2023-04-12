@@ -4,13 +4,13 @@
 * main - that copies the content of a file to another file
 * @argc: arguments
 * @argv: array of arguments
-* Return: Always 0
+* Return: 0
 */
 
 int main(int argc, char **argv)
 {
 	int file_from, file_to;
-	ssize_t r, w, clo;
+	int r, w, clo;
 	char c[1024];
 
 	r = 1024;
