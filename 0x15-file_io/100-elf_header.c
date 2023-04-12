@@ -9,7 +9,7 @@
 
 void control(unsigned char *id)
 {
-	if (*(id) == 0x7f && *(id + 1) == 'E' &&
+	if (*(id) == 127 && *(id + 1) == 'E' &&
 	    *(id + 2) == 'L' && *(id + 3) == 'F')
 	{
 		printf("ELF Header:\n");
@@ -33,7 +33,7 @@ void magic(unsigned char *id)
 
 	l = EI_NIDENT - 1;
 	printf("Magic: ");
-	a = 0
+	a = 0;
 	while (a < l)
 	{
 		a++
@@ -45,7 +45,7 @@ void magic(unsigned char *id)
 /**
 * class - print the class of the ELF
 * @id: the ELF struct
-* return: void
+* Return: void
 */
 
 void class(unsigned char *id)
@@ -53,7 +53,7 @@ void class(unsigned char *id)
 	printf("Class: ");
 	if (id[EI_CLASS] == ELFCLASSNONE)
 		printf("This class is invalid\n");
-	else if (ident[EI_CLASS] == ELFCLASS32)
+	else if (id[EI_CLASS] == ELFCLASS32)
 		printf("ELF32\n");
 	else if (id[EI_CLASS] == ELFCLASS64)
 		printf("ELF64\n");
@@ -155,7 +155,7 @@ void type(unsigned int tpe, unsigned char *id)
 
 /**
 * entry - print the entry point
-* @e_ident: the ELF struct
+* @id: the ELF struct
 * @entrie: integer unsigned
 * Return: void
 */
@@ -186,8 +186,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: error in # of args\n");
 		exit(98);
 	}
-	file = malloc(sizeof(Elf64_Ehdr));
-	if (file == NULL)
+	fiche = malloc(sizeof(Elf64_Ehdr));
+	if (fiche == NULL)
 	{
 		dprintf(STDERR_FILENO, "error in allocate memory\n");
 		exit(98);
