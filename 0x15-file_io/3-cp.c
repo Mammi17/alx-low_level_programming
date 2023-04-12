@@ -4,15 +4,16 @@
 * main - that copies the content of a file to another file
 * @argc: arguments
 * @argv: array of arguments
-* Return: Always 0.
+* Return: Always 0
 */
 
 int main(int argc, char **argv)
 {
 	int file_from, file_to;
-	ssize_t  r = 1024, w, clo;
+	ssize_t r, w, clo;
 	char c[1024];
 
+	r = 1024;
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
