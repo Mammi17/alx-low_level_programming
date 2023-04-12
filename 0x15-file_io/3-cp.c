@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 	}
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	clo = close(file_from);
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 	clo = close(file_to);
-	if (clo == -1)
+	if (clo < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd  %d\n", file_to);
 		exit(100);
