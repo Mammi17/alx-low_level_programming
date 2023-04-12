@@ -21,10 +21,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		while (text_content[c])
 			c++;
-		b = write(fd, text_content, b);
+		b = write(a, text_content, c);
 	}
-
 	close(a);
-
 	return (1);
 }
