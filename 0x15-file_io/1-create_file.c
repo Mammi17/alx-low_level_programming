@@ -1,15 +1,15 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * create_file - creates a file and fills it with text
- * @filename: name of the file to create
+ * create_file - creates a file
+ * @filename: a pointer
  * @text_content: text to write in the file
  * Return: 1 or -1
  */
 
 int create_file(const char *filename, char *text_content)
 {
-	int a, b, c ;
+	int a, b, c;
 
 	c = 0;
 	if (filename == NULL)
