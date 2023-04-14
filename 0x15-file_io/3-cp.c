@@ -9,8 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	int file_from, file_to;
-	int r, w, clo;
+	int file_from, file_to, r, w, clo;
 	char c[1024];
 
 	r = 1024;

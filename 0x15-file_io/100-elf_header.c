@@ -29,7 +29,7 @@ void control(unsigned char *id)
 
 void magic(unsigned char *id)
 {
-	int i, l;
+	int a, l;
 
 	l = EI_NIDENT - 1;
 	printf("Magic: ");
