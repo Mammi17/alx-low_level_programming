@@ -14,6 +14,8 @@ char **strtow(char *str)
 	int b, i = 0, j = 0, a, d, t, l = 0;
 
 	a = 0;
+	if (str == NULL || str == "")
+		return (NULL);
 	while (str[a])
 		a++;
 	b = count(str);
