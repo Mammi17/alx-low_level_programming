@@ -24,8 +24,6 @@ char **strtow(char *str)
 		return (NULL);
 	for (j = 0; j <= a; j++)
 	{
-		if (str ==  NULL || str[0] == ' ')
-			return (NULL);
 		if (str[j] == ' ' || str[j] == '\0')
 		{
 			if (i)
@@ -45,6 +43,8 @@ char **strtow(char *str)
 		else if (i++ == 0)
 			t = j;
 	}
+	if (str ==  NULL || str[0] == ' ')
+		return (NULL);
 
 	point[l] = NULL;
 	return (point);
