@@ -22,7 +22,7 @@ char **strtow(char *str)
 	point = (char **) malloc((b + 1) * sizeof(char *));
 	if (point == NULL)
 		return (NULL);
-	for (j = 0; i <= a; j++)
+	for (j = 0; j <= a; j++)
 	{
 		if (str[j] == ' ' || str[j] == '\0')
 		{
