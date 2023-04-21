@@ -27,7 +27,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (c >= size_r || b >= size_r)
 		return (0);
-	for (b = 0 || c = 0; b >= 0 || c >= 0 || d == 1; b-- || c--)
+	for (b = 0, c = 0; b >= 0 || c >= 0 || d == 1; b--, c--)
 	{
 		if (b < 0)
 			add1 = 0;
@@ -45,11 +45,38 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (f >= (size_r - 1))
 			return (0);
 		r[f] = (e % 10) + '0';
-		f++
+		f++;
 	}
 	if (f == size_r)
 		return (0);
 	r[f] = '\0';
-	rev_string(r);
+	reverse_char(r);
 	return (r);
+}
+
+/**
+ * reverse_char - reverse array
+ * @n: integer params
+ * Return: void
+ */
+
+void reverse_char(char *n)
+{
+	int i, j;
+	char t;
+
+	i = 0;
+	j = 0;
+	while (*(n + j) != '\0')
+	{
+		j++;
+	}
+	j--;
+
+	for (i = 0; i < j; i++, j--)
+	{
+		temp = *(n + i);
+		*(n + i) = *(n + j);
+		*(n + j) = t;
+	}
 }
