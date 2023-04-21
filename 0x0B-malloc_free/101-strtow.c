@@ -43,8 +43,6 @@ char **strtow(char *str)
 		else if (i++ == 0)
 			t = j;
 	}
-	if (str ==  NULL || str[0] == ' ')
-		return (NULL);
 
 	point[l] = NULL;
 	return (point);
@@ -63,7 +61,7 @@ int count(char *f)
 	{
 		if (f[k] == ' ')
 			a = 0;
-		if (a == 0)
+		else if (a == 0)
 		{
 			a = 1;
 			b++;
