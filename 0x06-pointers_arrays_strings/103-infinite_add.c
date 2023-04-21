@@ -67,7 +67,7 @@ void reverse_char(char *n)
 
 	i = 0;
 	j = 0;
-	while (*(n + j) != '\0')
+	while (n[j] != '\0')
 	{
 		j++;
 	}
@@ -75,8 +75,8 @@ void reverse_char(char *n)
 
 	for (i = 0; i < j; i++, j--)
 	{
-		temp = *(n + i);
-		*(n + i) = *(n + j);
-		*(n + j) = t;
+		t = n[i];
+		n[i] = n[j];
+		n[j] = t;
 	}
 }
