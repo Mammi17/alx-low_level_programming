@@ -14,8 +14,6 @@ char **strtow(char *str)
 	int b, i = 0, j = 0, a, d, t, l = 0;
 
 	a = 0;
-	if (str ==  NULL || str[0] == ' ')
-		return (NULL);
 	while (str[a])
 		a++;
 	b = count(str);
@@ -26,6 +24,8 @@ char **strtow(char *str)
 		return (NULL);
 	for (j = 0; j <= a; j++)
 	{
+		if (str ==  NULL || str[0] == ' ')
+			return (NULL);
 		if (str[j] == ' ' || str[j] == '\0')
 		{
 			if (i)
