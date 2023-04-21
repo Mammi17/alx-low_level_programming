@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
-/*
- * infinite_add - that adds two numbers
+/**
+ * infnite_add - that adds two numbers
  * @n1: a pointer
  * @n2: a pointer
  * @r: a pointer
@@ -12,20 +12,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int b, c, d, add1 = 0, add2 = 0, e, f;
 
-	b = 0;
-	c = 0;
-	d = 0;
-	f = 0;
-	e = 0;
+	b = 0, c = 0, d = 0, f = 0, e = 0;
 	while (n1[b] != '\0')
-	{
 		b++;
-	}
 	b--;
 	while (n2[c])
-	{
 		c++;
-	}
 	c--;
 	if (c >= size_r || b >= size_r)
 		return (0);
@@ -70,9 +62,7 @@ void reverse_char(char *n)
 	i = 0;
 	j = 0;
 	while (n[j] != '\0')
-	{
 		j++;
-	}
 	j--;
 
 	for (i = 0; i < j; i++, j--)
