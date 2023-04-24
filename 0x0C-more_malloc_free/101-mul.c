@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	num1 = argv[1], num2 = argv[2];
-	j = 0
+	j = 0;
 	while (num1[j] != '\0')
 	{
 		if (!digit(num1[j]))
