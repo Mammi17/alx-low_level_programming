@@ -103,7 +103,7 @@ int digit(int s)
  * @c: a pointer
  * Return: integer
  */
-int len(char *c)
+int length(char *c)
 {
 	int j = 0;
 
