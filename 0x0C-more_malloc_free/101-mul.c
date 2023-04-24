@@ -19,13 +19,15 @@ int main(int argc, char *argv[])
 	num1 = argv[1], num2 = argv[2];
 	j = 0;
 	while (num1[j] != '\0')
-	{if (!digit(num1[j]))
+	{
+		if (!digit(num1[j]))
 		{ printf("Error\n");
 			exit(98); }
 		j++; }
 	j = 0;
 	while (num2[j] != '\0')
-	{ if (!digit(num2[j]))
+	{
+		if (!digit(num2[j]))
 		{ printf("Error\n");
 			exit(98); }
 		j++; }
@@ -47,14 +49,14 @@ int main(int argc, char *argv[])
 		if (i > 0)
 			str[ln1 + ln2 + 1] += i; }
 	for (j = 0; j < c - 1; j++)
-	{ if (str[j])
+	{
+		if (str[j])
 			b = 1;
 		if (b)
 			_putchar(str[j] + '0'); }
 	if (!b)
 		_putchar('0');
-	_putchar('\n');
-	free(str);
+	_putchar('\n');	free(str);
 	return (0);
 }
 
