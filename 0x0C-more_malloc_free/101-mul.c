@@ -17,10 +17,14 @@ int main(int argc, char *argv[])
 	{ printf("Error\n"), exit(98); }
 	num1 = argv[1], num2 = argv[2];
 	j = 0;
-	while (num1[j] != '\0'|| num2[j] != '\0')
+	while (num1[j] != '\0')
 	{
 		if (!digit(num1[j]))
 		{ printf("Error\n"), exit(98); }
+		j++; }
+	j = 0;
+	while (num2[j] != '\0')
+	{
 		if (!digit(num2[j]))
 		{ printf("Error\n"), exit(98); }
 		j++; }
@@ -34,7 +38,7 @@ int main(int argc, char *argv[])
 	{ n1 = num1[ln1] - '0', i = 0;
 		for (ln2 = length(num2) - 1; ln2 >= 0; ln2--)
 		{ n2 = num2[ln2] - '0';
-			i += str[ln1 + ln2 + 1] + (n1 * n2), str[ln1 + ln2 + 1] = i % 10,i /= 10; }
+			i += str[ln1 + ln2 + 1] + (n1 * n2),  str[ln1 + ln2 + 1] = i % 10,i /= 10; }
 		if (i > 0)
 			str[ln1 + ln2 + 1] += i; }
 	for (j = 0; j < c - 1; j++)
