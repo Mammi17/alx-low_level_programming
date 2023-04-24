@@ -1,8 +1,6 @@
 #include <elf.h>
 #include "main.h"
 #include <stdio.h>
-#define REV ( n ) ((n << 24 ) | (((n >> 16 ) << 24 ) >> 16 ) | \
-(((n << 16 ) >> 24 ) << 16 ) | (n >> 24 ))
 /**
 * control- verify the file to check if is a ELF
 * @id: the ELF struct
@@ -38,7 +36,7 @@ void magic(unsigned char *id)
 	a = 0;
 	while (a < l)
 	{
-		a++
+		a++;
 		printf("%02x ", *(id + a));
 	}
 	printf("%02x\n", *(id + a));
@@ -90,11 +88,11 @@ void data(unsigned char *id)
 
 void version(unsigned char *id)
 {
-	printf("Version:%i ");
+	printf("Version: %d ");
 	if (id[EI_VERSION] == EV_CURRENT)
-		printf("%i (current)\n", EV_CURRENT);
+		printf("%d (current)\n", EV_CURRENT);
 	else
-		printf("%i\n", id[EI_VERSION]);
+		printf("%d\n", id[EI_VERSION]);
 }
 
 /**
