@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	char *num1, *num2;
 	int *str, i, j, b, ln1, ln2, c, n1, n2;
 
-	k = 0;
+	l = 0;
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 
 /**
  * digit - check the code
- * @s: parameter for function
+ * @s: integer
  * Return: 1 or 0
  */
 int digit(int s)
@@ -100,8 +100,8 @@ int digit(int s)
 
 /**
  * length - returns length of the string
- * @c: the actual string
- * Return: length of the string;
+ * @c: a pointer
+ * Return: integer
  */
 int len(char *c)
 {
