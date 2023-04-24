@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 			_putchar(str[j] + '0'); }
 	if (!b)
 		_putchar('0');
-	_putchar('\n');	free(str);
+	_putchar('\n'),	free(str);
 	return (0);
 }
 
