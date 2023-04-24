@@ -88,7 +88,7 @@ void data(unsigned char *id)
 
 void version(unsigned char *id)
 {
-	printf("Version: %d ");
+	printf("Version: ");
 	if (id[EI_VERSION] == EV_CURRENT)
 		printf("%d (current)\n", EV_CURRENT);
 	else

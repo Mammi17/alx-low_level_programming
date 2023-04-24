@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define REV ( n ) ((n << 24 ) | (((n >> 16 ) << 24 ) >> 16 ) | \
-(((n << 16 ) >> 24 ) << 16 ) | (n >> 24 ))
+#define REV(n) ((n << 24) | (((n >> 16) << 24) >> 16) | \
+(((n << 16) >> 24) << 16) | (n >> 24))
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
