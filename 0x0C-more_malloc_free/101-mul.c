@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	char *num1, *num2;
 	int *str, i, j, b, ln1, ln2, c, n1, n2;
 
-	l = 0;
+	b = 0;
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
  */
 int digit(int s)
 {
-	if (s >= 48 && c <= 57)
+	if (s >= 48 && s <= 57)
 		return (1);
 	else
 		return (0);
