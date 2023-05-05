@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * add_node_end - adds a new node at the end of a list_t
+ * add_nodeint_end - adds a new node at the end of a list_t
  * @head: pointer
  * @n: an integer
  * Return: listint_t
