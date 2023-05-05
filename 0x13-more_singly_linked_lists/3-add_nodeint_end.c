@@ -10,10 +10,8 @@
 
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	size_t a;
 	listint_t *ncurrent, *point;
 
-	a = 0;
 	ncurrent = malloc(sizeof(listint_t));
 	if (ncurrent == NULL)
 		return (NULL);
