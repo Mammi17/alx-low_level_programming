@@ -8,6 +8,7 @@
  * @next: points to the next node
  *
  * Descripton: singly linked list node structure
+ *
  */
 typedef struct listint_s
 {
