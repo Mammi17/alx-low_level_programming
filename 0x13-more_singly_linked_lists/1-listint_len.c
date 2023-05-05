@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 /**
- * list_len - that returns of elements a linked listint_t
+ * listint_len - that returns of elements a linked listint_t
  * @h: pointer
  * Return: size_t
  */
