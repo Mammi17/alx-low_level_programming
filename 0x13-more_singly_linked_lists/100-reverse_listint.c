@@ -19,8 +19,6 @@ listint_t *reverse_listint(listint_t **head)
 		av = *head;
 		*head = ap;
 	}
-
-    *head = av;
-
-    return (*head);
+	*head = av;
+	return (*head);
 }
