@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
-#include <stlib.h>
+#include <stdlib.h>
 /**
  * get_nodeint_at_index - that returns the nth node of a listint_t linked list
  * @head: first node in the linked list
