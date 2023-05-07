@@ -33,7 +33,7 @@ void magic(unsigned char *id)
 	int a, l;
 
 	l = EI_NIDENT - 1;
-	printf("Magic: ");
+	printf("Magic:   ");
 	a = 0;
 	while (a < l)
 	{
@@ -51,7 +51,7 @@ void magic(unsigned char *id)
 
 void class(unsigned char *id)
 {
-	printf("Class: ");
+	printf("Class:                             ");
 	if (id[EI_CLASS] == ELFCLASSNONE)
 		printf("This class is invalid\n");
 	else if (id[EI_CLASS] == ELFCLASS32)
@@ -70,7 +70,7 @@ void class(unsigned char *id)
 
 void data(unsigned char *id)
 {
-	printf("Data: ");
+	printf("Data:                              ");
 	if (id[EI_DATA] == ELFDATANONE)
 		printf("Unknown data format\n");
 	else if (id[EI_DATA] == ELFDATA2LSB)
@@ -89,7 +89,7 @@ void data(unsigned char *id)
 
 void version(unsigned char *id)
 {
-	printf("Version: ");
+	printf("Version:                           ");
 	if (id[EI_VERSION] == EV_CURRENT)
 		printf("%d (current)\n", EV_CURRENT);
 	else
@@ -103,7 +103,7 @@ void version(unsigned char *id)
  */
 void osabi(unsigned char *id)
 {
-	printf("OS/ABI: ");
+	printf("OS/ABI:                            ");
 	if (id[EI_OSABI] == ELFOSABI_SYSV)
 		printf("UNIX - System V\n");
 	else if (id[EI_OSABI] == ELFOSABI_HPUX)
@@ -139,7 +139,7 @@ void type(unsigned int tpe, unsigned char *id)
 {
 	id[EI_DATA] == ELFDATA2MSB ? tpe = tpe >> 8 : tpe;
 
-	printf("Type: ");
+	printf("Type:                              ");
 	if (tpe == ET_NONE)
 		printf("NONE (Unknown type)\n");
 	else if (tpe == ET_REL)
@@ -166,7 +166,7 @@ void entry(unsigned int entrie, unsigned char *id)
 	if (id[EI_DATA] == ELFDATA2MSB)
 		entrie = REV(entrie);
 
-	printf("Entry point address: ");
+	printf("Entry point address:               ");
 	printf("%#x\n", (unsigned int)entrie);
 }
 
