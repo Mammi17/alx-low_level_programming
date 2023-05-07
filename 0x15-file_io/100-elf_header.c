@@ -1,7 +1,6 @@
 #include <elf.h>
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
 /**
 * control- verify the file to check if is a ELF
 * @id: the ELF struct
@@ -30,20 +29,17 @@ void control(unsigned char *id)
 
 void magic(unsigned char *id)
 {
-	int a, l;
+	int i, l;
 
-	l = EI_NDENT;
-	printf("Magic:   ");
+	l = EI_NIDENT - 1;
+	printf("Magic: ");
 	a = 0;
 	while (a < l)
 	{
+		a++
 		printf("%02x ", *(id + a));
-		if (a == l - 1)
-			printf("\n");
-		else
-			printf(" ");
-		a++;
 	}
+	printf("%02x\n", *(id + a));
 }
 
 /**
@@ -54,7 +50,7 @@ void magic(unsigned char *id)
 
 void class(unsigned char *id)
 {
-	printf("Class:                             ");
+	printf("Class: ");
 	if (id[EI_CLASS] == ELFCLASSNONE)
 		printf("This class is invalid\n");
 	else if (id[EI_CLASS] == ELFCLASS32)
@@ -73,7 +69,7 @@ void class(unsigned char *id)
 
 void data(unsigned char *id)
 {
-	printf("Data:                              ");
+	printf("Data: ");
 	if (id[EI_DATA] == ELFDATANONE)
 		printf("Unknown data format\n");
 	else if (id[EI_DATA] == ELFDATA2LSB)
@@ -92,11 +88,11 @@ void data(unsigned char *id)
 
 void version(unsigned char *id)
 {
-	printf("Version:                           ");
+	printf("Version:%i ");
 	if (id[EI_VERSION] == EV_CURRENT)
-		printf("%d (current)\n", EV_CURRENT);
+		printf("%i (current)\n", EV_CURRENT);
 	else
-		printf("%d\n", id[EI_VERSION]);
+		printf("%i\n", id[EI_VERSION]);
 }
 
 /**
@@ -106,7 +102,7 @@ void version(unsigned char *id)
  */
 void osabi(unsigned char *id)
 {
-	printf("OS/ABI:                            ");
+	printf("OS/ABI: ");
 	if (id[EI_OSABI] == ELFOSABI_SYSV)
 		printf("UNIX - System V\n");
 	else if (id[EI_OSABI] == ELFOSABI_HPUX)
@@ -142,7 +138,7 @@ void type(unsigned int tpe, unsigned char *id)
 {
 	id[EI_DATA] == ELFDATA2MSB ? tpe = tpe >> 8 : tpe;
 
-	printf("Type:                              ");
+	printf("Type: ");
 	if (tpe == ET_NONE)
 		printf("NONE (Unknown type)\n");
 	else if (tpe == ET_REL)
@@ -169,7 +165,7 @@ void entry(unsigned int entrie, unsigned char *id)
 	if (id[EI_DATA] == ELFDATA2MSB)
 		entrie = REV(entrie);
 
-	printf("Entry point address:               ");
+	printf("Entry point address: ");
 	printf("%#x\n", (unsigned int)entrie);
 }
 
@@ -209,16 +205,16 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
 		exit(98);
 	}
-	control(fiche->e_ident);
-	magic(fiche->e_ident);
-	class(fiche->e_ident);
-	data(fiche->e_ident);
-	version(fiche->e_ident);
-	osabi(fiche->e_ident);
-	printf("ABI Version:                       ");
-	printf("%i\n", fiche->e_ident[EI_ABIVERSION]);
-	type(fiche->e_type, fiche->e_ident);
-	entry(fiche->e_entry, fiche->e_ident);
+	control(fiche->id);
+	magic(fiche->id);
+	class(fiche->id);
+	data(fiche->id);
+	version(fiche->id);
+	osabi(fiche->id);
+	printf("ABI Version: ");
+	printf("%i\n", fiche->id[EI_ABIVERSION]);
+	type(fiche->tpe, fiche->id);
+	entry(fiche->entrie, fiche->id);
 	free(fiche);
 	clo = close(a);
 	if (clo)
