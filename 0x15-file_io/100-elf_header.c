@@ -44,7 +44,6 @@ void magic(unsigned char *id)
 		else
 			printf(" ");
 	}
-	printf("%02x\n", *(id + a));
 }
 
 /**
