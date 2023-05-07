@@ -39,6 +39,10 @@ void magic(unsigned char *id)
 	{
 		a++;
 		printf("%02x ", *(id + a));
+		if (index == l - 1)
+			printf("\n");
+		else
+			printf(" ");
 	}
 	printf("%02x\n", *(id + a));
 }
