@@ -30,18 +30,19 @@ void control(unsigned char *id)
 
 void magic(unsigned char *id)
 {
-	int a;
+	int a, l;
 
+	l = EI_NDENT;
 	printf("Magic:   ");
 	a = 0;
-	while (a < EI_NIDENT)
+	while (a < l)
 	{
-		a++;
 		printf("%02x ", *(id + a));
-		if (a == EI_NDENT - 1)
+		if (a == l - 1)
 			printf("\n");
 		else
 			printf(" ");
+		a++;
 	}
 }
 
