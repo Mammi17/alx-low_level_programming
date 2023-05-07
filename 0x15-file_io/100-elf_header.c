@@ -1,6 +1,7 @@
 #include <elf.h>
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
 * control- verify the file to check if is a ELF
 * @id: the ELF struct
@@ -205,16 +206,16 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
 		exit(98);
 	}
-	control(fiche->id);
-	magic(fiche->id);
-	class(fiche->id);
-	data(fiche->id);
-	version(fiche->id);
-	osabi(fiche->id);
+	control(fiche->e_ident);
+	magic(fiche->e_ident);
+	class(fiche->e_ident);
+	data(fiche->e_ident);
+	version(fiche->e_ident);
+	osabi(fiche->e_ident);
 	printf("ABI Version: ");
-	printf("%i\n", fiche->id[EI_ABIVERSION]);
-	type(fiche->tpe, fiche->id);
-	entry(fiche->entrie, fiche->id);
+	printf("%i\n", fiche->e_ident[EI_ABIVERSION]);
+	type(fiche->tpe, fiche->e_ident);
+	entry(fiche->entrie, fiche->e_ident);
 	free(fiche);
 	clo = close(a);
 	if (clo)
