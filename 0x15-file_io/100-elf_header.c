@@ -32,7 +32,7 @@ void magic(unsigned char *id)
 {
 	int a, l;
 
-	l = EI_NIDENT - 1;
+	l = EI_NIDENT;
 	printf("Magic:   ");
 	a = 0;
 	while (a < l)
@@ -212,7 +212,7 @@ int main(int argc, char *argv[])
 	data(fiche->e_ident);
 	version(fiche->e_ident);
 	osabi(fiche->e_ident);
-	printf("ABI Version: ");
+	printf("ABI Version:                       ");
 	printf("%i\n", fiche->e_ident[EI_ABIVERSION]);
 	type(fiche->e_type, fiche->e_ident);
 	entry(fiche->e_entry, fiche->e_ident);
