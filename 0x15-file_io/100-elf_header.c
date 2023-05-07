@@ -214,8 +214,8 @@ int main(int argc, char *argv[])
 	osabi(fiche->e_ident);
 	printf("ABI Version: ");
 	printf("%i\n", fiche->e_ident[EI_ABIVERSION]);
-	type(fiche->tpe, fiche->e_ident);
-	entry(fiche->entrie, fiche->e_ident);
+	type(fiche->e_type, fiche->e_ident);
+	entry(fiche->e_entry, fiche->e_ident);
 	free(fiche);
 	clo = close(a);
 	if (clo)
