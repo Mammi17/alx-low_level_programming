@@ -184,23 +184,23 @@ int main(int argc, char *argv[])
 
 	if (argc > 2 || argc < 2)
 	{
-		dprintf(STDERR_FILENO, "Usage: error in # of args\n"), exit(98);
-	}
+		dprintf(STDERR_FILENO, "Usage: error in # of args\n"), exit(98); }
 	fiche = malloc(sizeof(Elf64_Ehdr));
 	if (fiche == NULL)
 	{
-		dprintf(STDERR_FILENO, "error in allocate memory\n"), exit(98);
-	}
+		dprintf(STDERR_FILENO, "error in allocate memory\n"), exit(98); }
 	a = open(*(argv + 1), O_RDONLY);
 	if (a == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1)), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
+		exit(98);
 	}
 	r = read(a, fiche, sizeof(Elf64_Ehdr));
 	if (r == -1)
 	{
 		free(fiche);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1)), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
+		exit(98);
 	}
 	control(fiche->e_ident);
 	magic(fiche->e_ident);
