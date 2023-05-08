@@ -37,8 +37,8 @@ void magic(unsigned char *id)
 	a = 0;
 	while (a < l)
 	{
-		a++;
 		printf("%02x ", *(id + a));
+		a++;
 	}
 	printf("%02x\n", *(id + a));
 }
