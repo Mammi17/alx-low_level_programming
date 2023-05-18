@@ -14,7 +14,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	char pass[7], *code;
 	int l = strlen(argv[1]), a, point;
 
-	code = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+code = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 	point = (l ^ 59) & 63;
 	pass[0] = code[point];
 	point = 0;
