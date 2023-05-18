@@ -1,36 +1,55 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
-/**
- * delete_nodeint_at_index - delete a node at index of the list
- * @head: pointer
- * @index: an integer
- * Return: integer
- */
-int delete_nodeint_at_index(listint_t **head, unsigned int index)
-{
-	listint_t *point, *str;
-	unsigned int count;
+#include <string.h>
 
-	if (*head == '\0')
-		return (-1);
-	str = *head;
-	if (index == 0)
+/**
+ * main - Generates and prints passwords for the crackme5 executable.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
+ * Return: integer.
+ */
+int main(int __attribute__((__unused__)) argc, char *argv[])
+{
+	char pass[7], *code;
+	int l = strlen(argv[1]), a, point;
+
+	code = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+	point = (l ^ 59) & 63;
+	pass[0] = code[point];
+	point = 0;
+	a = 0;
+	while (a < l)
 	{
-		*head = (*head)->next;
-		free(str);
-		return (1);
+		point += argv[1][a];
+		a++;
 	}
-	count = 0;
-	for (count < index - 1)
+	pass[1] = code[(point ^ 79) & 63];
+	point = 1;
+	for (a = 0; a < len; a++)
+		point *= argv[1][a];
+	pass[2] = code[(point ^ 85) & 63];
+	point = 0;
+	for (a = 0; a < l; a++)
 	{
-		if (cont == '\0')
-			return (-1);
-		str = str->next;
-		count++;
+		if (argv[1][a] > point)
+			point = argv[1][a];
 	}
-	point = str->next;
-	str->next = point->next;
-	free(point);
-	return (1);
+	srand(point ^ 14);
+	pass[3] = code[rand() & 63];
+
+	point = 0;
+	a = 0;
+	while (a < len)
+	{
+		point += (argv[1][a] * argv[1][a]);
+		a++;
+	}
+	pass[4] = code[(point ^ 239) & 63];
+	for (a = 0; a < argv[1][0]; a++)
+		point = rand();
+	pass[5] = code[(point ^ 229) & 63];
+	pass[6] = '\0';
+	printf("%s", pass);
+	return (0);
 }
