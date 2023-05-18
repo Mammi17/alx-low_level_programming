@@ -4,7 +4,7 @@
 /**
  * add_dnodeint - add new element at beginiing of list
  * @head: pointer
- * @n: anteger
+ * @n: an integer
  * Return: a struct
  */
 

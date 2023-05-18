@@ -10,7 +10,7 @@
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *alpha; *current;
+	dlistint_t *alpha, *current;
 
 	alpha = NULL;
 	current = *head;
@@ -20,7 +20,6 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		alpha->n = n;
 		alpha->next = NULL;
 		alpha->prev = NULL;
-
 		if (!(*head))
 			*head = alpha;
 		else
