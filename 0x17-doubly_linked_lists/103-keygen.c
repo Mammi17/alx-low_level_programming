@@ -26,7 +26,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	}
 	pass[1] = code[(point ^ 79) & 63];
 	point = 1;
-	for (a = 0; a < len; a++)
+	for (a = 0; a < l; a++)
 		point *= argv[1][a];
 	pass[2] = code[(point ^ 85) & 63];
 	point = 0;
@@ -40,7 +40,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 	point = 0;
 	a = 0;
-	while (a < len)
+	while (a < l)
 	{
 		point += (argv[1][a] * argv[1][a]);
 		a++;
