@@ -10,16 +10,16 @@
 size_t print_dlistint(const dlistint_t *h)
 {
 	const dlistint_t *str = h;
-	size_t n;
+	size_t a;
 	
-	n = 0;
+	a = 0;
 	while (str && str->prev)
 		str = str->prev;
 	while (str)
 	{
-		printf("%d\n", ptr->n);
-		n++;
+		printf("%d\n", str->n);
+		a++;
 		str = str->next;
 	}
-	return (n);
+	return (a);
 }
