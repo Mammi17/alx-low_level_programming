@@ -2,19 +2,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 /**
  * main - Generates and prints passwords for the crackme5 executable.
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
+ * @argc: The number of arguments
+ * @argv: An array of pointers
  * Return: integer.
  */
+
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	char pass[7], *code;
 	int l = strlen(argv[1]), a, point;
 
-code = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+	code = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 	point = (l ^ 59) & 63;
 	pass[0] = code[point];
 	point = 0;
@@ -37,7 +37,6 @@ code = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 	}
 	srand(point ^ 14);
 	pass[3] = code[rand() & 63];
-
 	point = 0;
 	a = 0;
 	while (a < l)
