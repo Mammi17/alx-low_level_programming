@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * insert_dnodeint_at_index - Inserts a new node at a given position.
- * @h: A pointer 
+ * insert_dnodeint_at_index - Inserts a new node at a given position
+ * @h: A pointer
  * @idx: an unsigned integer
  * @n: an integer
  * Return: a structure
