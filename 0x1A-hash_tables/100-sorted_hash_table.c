@@ -26,6 +26,8 @@ shash_table_t *shash_table_create(unsigned long int size)
 		(new->array)[a] = NULL;
 		a++;
 	}
+	new->shead = NULL;
+	new->stail = NULL;
 	return (new);
 }
 
