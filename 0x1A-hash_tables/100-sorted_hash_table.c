@@ -146,7 +146,6 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 void shash_table_print(const shash_table_t *ht)
 {
-	unsigned long int a = 0, posi = 0;
 	shash_node_t *point = NULL;
 
 	if (ht == NULL)
