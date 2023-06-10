@@ -127,9 +127,9 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 		return (NULL);
 
 	ind = key_index((unsigned char *)key, ht->size);
-	if ((ht->array)[ind] == NULL)
+	if (ind >= ht->size)
 		return (NULL);
-	point = ht->array[ind];
+	point = ht->shead;
 	while (point)
 	{
 		if (strcmp(point->key, key) != 0)
