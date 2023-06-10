@@ -119,7 +119,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int ind = 0;
-	char *val = NULL;
 	shash_node_t *point;
 
 	if (!ht || !key)
@@ -131,13 +130,12 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	if ((ht->array)[ind] == NULL)
 		return (NULL);
 	point = ht->array[ind];
-	while (!val)
+	while (point)
 	{
-		if (strcmp(point->key, key) == 0)
-			val = point->value;
-		point = point->next;
+		if (strcmp(point->key, key) != 0)
+			point = point->next;
 	}
-	return (val);
+	return ((point == NULL) ? NULL : point->value);;
 }
 
 /**
