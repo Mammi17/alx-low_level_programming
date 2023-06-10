@@ -41,7 +41,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int ind = 0;
-	char *val = NULL, *cle = NULL;
+	char *val = NULL;
 	shash_node_t *new = NULL, *point = NULL;
 
 	if (!ht || !key || !value)
@@ -49,35 +49,64 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else if (strlen(key) == 0)
 		return (0);
 	val = strdup(value);
-	cle = strdup(key);
 	new = malloc(sizeof(shash_node_t));
-	if (!new)
+	if (!val)
 		return (0);
-	new->key = cle;
-	new->value = val;
-	new->next = NULL;
+	point = ht->shead;
 	ind = key_index((unsigned char *)key, ht->size);
-	if ((ht->array)[ind] != NULL)
+	while (point)
 	{
-		point = (ht->array)[ind];
-		while (point)
+		if (strcmp(point->key, key) == 0)
 		{
-			if (strcmp(point->key, cle) == 0)
-			{
-				free(ht->array[ind]->value);
-				ht->array[ind]->value = val;
-				free(cle);
-				free(new);
-				return (1);
-			}
-			point = point->next;
+			free(point->value);
+			point->value = val;
+			return (1);
 		}
-		point = (ht->array)[ind];
-		new->next = point;
-		(ht->array)[ind] = new;
+		point = point->next;
+	}
+	if (new == NULL)
+	{
+		free(val);
+		return (0);
+	}
+	new->key = strdup(key);
+	if (new->key == NULL)
+	{
+		free(val);
+		free(new);
+		return (0);
+	}
+	new->value = val;
+	new->next = ht->array[ind];
+	ht->array[ind] = new;
+
+	if (ht->shead == NULL)
+	{
+		new->sprev = NULL;
+		new->snext = NULL;
+		ht->shead = new;
+		ht->stail = new;
+	}
+	else if (strcmp(ht->shead->key, key) > 0)
+	{
+		new->sprev = NULL;
+		new->snext = ht->shead;
+		ht->shead->sprev = new;
+		ht->shead = new;
 	}
 	else
-		(ht->array)[ind] = new;
+	{
+		point = ht->shead;
+		while (point->snext != NULL && strcmp(point->snext->key, key) < 0)
+			point = point->snext;
+		new->sprev = point;
+		new->snext = point->snext;
+		if (point->snext == NULL)
+			ht->stail = new;
+		else
+			point->snext->sprev = new;
+		point->snext = new;
+	}
 	return (1);
 }
 
