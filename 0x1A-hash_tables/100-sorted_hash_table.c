@@ -207,28 +207,18 @@ void shash_table_delete(shash_table_t *ht)
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	shash_node_t *node = NULL, *point = NULL;
-	int a = 0;
+	shash_node_t *point = NULL;
 
 	if (ht == NULL)
 		return;
-	node = ht->stail;
-
+	point = ht->stail;
 	printf("{");
-	point = node;
-	if (point != NULL)
+	while (point)
 	{
-		while (point)
-		{
-			if (!a)
-			{
-				printf("'%s': '%s'", point->key, point->value);
-				a = 1;
-			}
-			else
-				printf(", '%s': '%s'", point->key, point->value);
-			point = point->sprev;
-		}
+		printf("'%s': '%s'", point->key, point->value);
+		point = point->sprev;
+		if (point != NULL)
+			printf(", ");
 	}
 	printf("}\n");
 }
