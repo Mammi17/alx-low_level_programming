@@ -183,3 +183,37 @@ void shash_table_delete(shash_table_t *ht)
 	}
 	free(ht);
 }
+
+/**
+  * shash_table_print_rev - print a sorted hash table in rev
+  * @ht: hash table
+  * Return: void
+  */
+
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	shash_node_t *node = NULL, *point = NULL;
+	int a = 0;
+
+	if (ht == NULL)
+		return;
+	node = ht->stail;
+
+	printf("{");
+	point = node;
+	if (point != NULL)
+	{
+		while (point)
+		{
+			if (!a)
+			{
+				printf("'%s': '%s'", point->key, point->value);
+				a = 1;
+			}
+			else
+				printf(", '%s': '%s'", point->key, point->value);
+			point = point->sprev;
+		}
+	}
+	printf("}\n");
+}
