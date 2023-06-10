@@ -103,7 +103,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	while (!val)
 	{
 		if (strcmp(point->key, key) == 0)
-			val = point->val;
+			val = point->value;
 		point = point->next;
 	}
 	return (val);
