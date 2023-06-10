@@ -151,27 +151,14 @@ void shash_table_print(const shash_table_t *ht)
 
 	if (ht == NULL)
 		return;
+	point = ht->shead;
 	putchar('{');
-	if (ht)
+	while (point)
 	{
-		for (; a < ht->size - 1; a++)
-		{
-			if (ht->array[a] != NULL)
-				posi = a;
-		}
-
-		for (a = 0; a <= posi; a++)
-		{
-			point = ht->array[a];
-			while (point)
-			{
-				printf("'%s': '%s'", point->key, point->value);
-				point = point->next;
-				if (a < posi - 1)
-					printf(", ");
-			}
-
-		}
+		printf("'%s': '%s'", point->key, point->value);
+		point = point->next;
+		if (point != NULL )
+			printf(", ");
 	}
 	printf("}\n");
 }
