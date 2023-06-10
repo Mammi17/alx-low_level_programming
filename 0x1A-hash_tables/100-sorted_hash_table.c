@@ -196,7 +196,7 @@ void shash_table_delete(shash_table_t *ht)
 
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	shash_node_t *point = NULL;
+	shash_node_t *point;
 
 	if (ht == NULL)
 		return;
