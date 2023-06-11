@@ -169,7 +169,6 @@ void shash_table_print(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-	unsigned long int a = 0;
 	shash_node_t *ncurrent = NULL, *point = NULL;
 	shash_table_t *current = ht;
 
