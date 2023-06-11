@@ -18,7 +18,6 @@ shash_table_t *shash_table_create(unsigned long int size)
 	new->array = malloc(sizeof(shash_node_t *) * size);
 	if (!new->array)
 	{
-		free(new);
 		return (NULL);
 	}
 	while (a < size)
@@ -72,8 +71,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	new->next = ht->array[ind], ht->array[ind] = new;
 	if (ht->shead == NULL)
 	{
-		new->sprev = NULL, new->snext = NULL;
-		ht->shead = new,ht->stail = new;}
+		new->sprev = NULL, new->snext = NULL, ht->shead = new,ht->stail = new;}
 	else if (strcmp(ht->shead->key, key) > 0)
 	{
 		new->sprev = NULL,new->snext = ht->shead;
