@@ -39,33 +39,55 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
+        unsigned long int ind = 0;
+        char *val = NULL;
+        shash_node_t *new = NULL, *point = NULL;
 
-	shash_node_t *point = NULL, *new = NULL;
-	unsigned long int ind;
-
-	if (!key || !ht)
-		return (0);
-
-	ind = key_index((const unsigned char *)key, ht->size);
-	point = ht->array[ind];
-	while (point)
-	{
-		if (strcmp(point->key, key) == 0)
-		{
-			free(point->value);
-			point->value = strdup(value);
-			return (1);
-		}
-		point = point->next;
-	}
-	new = malloc(sizeof(shash_node_t));
-	if (!new)
-		return (0);
-	new->key = strdup(key);
-	new->value = strdup(value);
-	new->next = ht->array[ind];
-	ht->array[ind] = new;
-	return (1);
+        if (!ht || !key || !value)
+                return (0);
+        else if (strlen(key) == 0)
+                return (0);
+        val = strdup(value), new = malloc(sizeof(shash_node_t));
+        if (!val)
+                return (0);
+        point = ht->shead, ind = key_index((unsigned char *)key, ht->size);
+        while (point)
+        {
+                if (strcmp(point->key, key) == 0)
+                {
+                        free(point->value), point->value = val;
+                        return (1);}
+                point = point->next;}
+        if (new == NULL)
+        {
+                free(val);
+                return (0);}
+        new->key = strdup(key);
+        if (new->key == NULL)
+        {
+                free(val), free(new);
+                return (0);}
+        new->value = val;
+        new->next = ht->array[ind], ht->array[ind] = new;
+        if (ht->shead == NULL)
+        {
+                new->sprev = NULL, new->snext = NULL, ht->shead = new,ht->stail = new;}
+        else if (strcmp(ht->shead->key, key) > 0)
+        {
+                new->sprev = NULL,new->snext = ht->shead;
+                ht->shead->sprev = new, ht->shead = new;}
+        else
+        {
+                point = ht->shead;
+                while (point->snext != NULL && strcmp(point->snext->key, key) < 0)
+                        point = point->snext;
+                new->sprev = point, new->snext = point->snext;
+                if (point->snext == NULL)
+                        ht->stail = new;
+                else
+                        point->snext->sprev = new;
+                point->snext = new;}
+        return (1);
 }
 /**
  * shash_table_get - A function that gets key and value froma hash table.
