@@ -171,7 +171,7 @@ void shash_table_delete(shash_table_t *ht)
 {
 	unsigned long int a = 0;
 	shash_node_t *ncurrent = NULL, *point = NULL;
-	shash_table_t *current = NULL;
+	shash_table_t *current = ht;
 
 	if (!ht)
 		return;
