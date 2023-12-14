@@ -12,7 +12,7 @@
   */
 int bi_search(int *array, size_t gauche, size_t droite, int value)
 {
-	size_t ;
+	size_t a;
 
 	if (array == NULL)
 		return (-1);

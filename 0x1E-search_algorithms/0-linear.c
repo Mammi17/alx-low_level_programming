@@ -4,7 +4,7 @@
  * integers using the Linear search algorithm
  * @array: input array
  * @size: size of the array
- * @value: value to search in 
+ * @value: value to search in
  * Return: -1 or a
  */
 
